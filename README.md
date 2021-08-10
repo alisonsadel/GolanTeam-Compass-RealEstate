@@ -25,7 +25,6 @@
   full['Location'] = a.astype(str) + ', ' + b.astype(str) + ', ' + c.astype(str) + ', ' + d.astype(str)
 
 #### Part Two - Transform - Geocode Latitude & Longitude 
-* For Documentation see https://geopy.readthedocs.io/en/stable/
 
 ```
 # Libraries used for API Call
@@ -36,14 +35,14 @@
   import webbrowser
   ```
   
-* In order to geocode a pandas DataFrame with geopy you need to use RateLimiter. 
-
-```geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)``` classes provides a convenient wrapper, which can be used to automatically add delays between geocoding calls to reduce the load. RateLimiter allows you perform bulk operations while handling error responses and adding delays to prevent time-outs.
+* In order to geocode a pandas DataFrame with geopy you need to use RateLimiter. Geocode RateLimiter classes provides a convenient wrapper, which can be used to automatically add delays between geocoding calls to reduce the load. RateLimiter allows you perform bulk operations while handling error responses and adding delays to prevent time-outs.
+* For Documentation see https://geopy.readthedocs.io/en/stable/
 
 ```
-    full['Address'] = full['Location'].apply(geocode)
-    full['point'] = full['Address'].apply(lambda loc: tuple(loc.point) if loc else None)
-    full.point
+ geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
+ full['Address'] = full['Location'].apply(geocode)
+ full['point'] = full['Address'].apply(lambda loc: tuple(loc.point) if loc else None)
+ full.point
   
 * The above code produces the following dataFrame:
 
