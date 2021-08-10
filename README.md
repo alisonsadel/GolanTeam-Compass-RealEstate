@@ -1,6 +1,6 @@
 # Golan Team Compass Real Estate
 
-#### Initial Cleaning & DataType Conversion
+#### Part One - Initial Cleaning & DataType Conversion
      
 * After importing in pandas, numpy and reading in the csv, to see the full column values to better visualize the data I used ```pd.set_option('max_colwidth', 800)```
 * Checked datatypes ```df.dtypes``` and converted year int64 to datetime  ```df['Year'] = pd.to_datetime(df['Year'], format='%Y')```
@@ -24,10 +24,27 @@
   # Merge 
   full['Location'] = a.astype(str) + ', ' + b.astype(str) + ', ' + c.astype(str) + ', ' + d.astype(str)
 
-#### Transform - Geocode Latitude & Longitude 
+#### Part Two - Transform - Geocode Latitude & Longitude 
+* For Documentation see https://geopy.readthedocs.io/en/stable/
+
 ```
 # Libraries used for API Call
-from geopy.geocoders import Nominatim
-geolocator = Nominatim(user_agent= 'youremailhere@gmail.com'
-from geopy.extra.rate_limiter import RateLimiter
-import webbrowser```
+  
+  from geopy.geocoders import Nominatim
+  geolocator = Nominatim(user_agent= 'youremailhere@gmail.com'
+  from geopy.extra.rate_limiter import RateLimiter
+  import webbrowser
+  ```
+  
+* In order to geocode a pandas DataFrame with geopy you need to use RateLimiter. 
+
+```geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)``` classes provides a convenient wrapper, which can be used to automatically add delays between geocoding calls to reduce the load. RateLimiter allows you perform bulk operations while handling error responses and adding delays to prevent time-outs.
+
+```
+    full['Address'] = full['Location'].apply(geocode)
+    full['point'] = full['Address'].apply(lambda loc: tuple(loc.point) if loc else None)
+    full.point
+  
+* The above code produces the following dataFrame:
+
+
