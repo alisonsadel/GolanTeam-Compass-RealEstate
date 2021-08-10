@@ -27,7 +27,7 @@
 #### Part Two - Transform - Geocode Latitude & Longitude 
 
 ```
-# Libraries used for API Call
+  # Libraries used for API Call
   
   from geopy.geocoders import Nominatim
   geolocator = Nominatim(user_agent= 'youremailhere@gmail.com'
@@ -39,10 +39,14 @@
 * For Documentation see https://geopy.readthedocs.io/en/stable/
 
 ```
- geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
- full['Address'] = full['Location'].apply(geocode)
- full['point'] = full['Address'].apply(lambda loc: tuple(loc.point) if loc else None)
- full.point
+  geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
+ 
+  # Apply Geocode to the location column
+  full['Address'] = full['Location'].apply(geocode)
+ 
+  # Take the data responses from the API call and populate the data in a new DataFrame column called "Address"
+  full['point'] = full['Address'].apply(lambda loc: tuple(loc.point) if loc else None)
+  full.point
   
 * The above code produces the following dataFrame:
 
