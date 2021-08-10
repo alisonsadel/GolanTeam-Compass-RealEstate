@@ -1,6 +1,6 @@
 # Golan Team Compass Real Estate
 
-#### Part One - Initial Cleaning & DataType Conversion
+#### Part 1a - Initial Cleaning & DataType Conversion
      
 * After importing in pandas, numpy and reading in the csv, to see the full column values to better visualize the data I used ```pd.set_option('max_colwidth', 800)```
 * Checked datatypes ```df.dtypes``` and converted year int64 to datetime  ```df['Year'] = pd.to_datetime(df['Year'], format='%Y')```
@@ -24,7 +24,7 @@
   # Merge 
   full['Location'] = a.astype(str) + ', ' + b.astype(str) + ', ' + c.astype(str) + ', ' + d.astype(str)
 
-#### Part Two - Transform - Geocode Latitude & Longitude 
+#### Part 1b - Transform - Geocode Latitude & Longitude 
 
 ```
   # Libraries used for API Call
@@ -44,10 +44,33 @@
   # Apply Geocode to the location column
   full['Address'] = full['Location'].apply(geocode)
  
-  # Take the data responses from the API call and populate the data in a new DataFrame column called "Address"
+  # Take the data responses (latitude, longitude, alitude) from the API call and populate the data into the DataFrame Full column called "Address"
   full['point'] = full['Address'].apply(lambda loc: tuple(loc.point) if loc else None)
   full.point
   
+  # Convert Data from DataFrame "Full" to a Series
+  coordinates_series = full['point'].apply(pd.Series)
+  coordinates_series
+  
+  # Add Latitude and Longitude as columns in dataframe
+  full['Latitude'] = coordinates_series[0]
+  full['Longitude'] = coordinates_series[1]
+  
+  # Find Missing Values by Creating a bool series True for NaN values 
+  bool_series = pd.isnull(full["Latitude"]) 
+  #bool_series = pd.isnull(full["Longitude"]) 
+  
+  # Displaying data only where columns = NaN 
+  full[bool_series]
+  
+  # Add missing values in Lat/Long columns
+  full.loc[2,'Latitude'] = 40.692015
+  full.loc[2,'Longitude'] = -73.934678
+  ...
+
+  
 * The above code produces the following dataFrame:
+
+
 
 
