@@ -1,6 +1,6 @@
 # Golan Team Compass Real Estate
 
-#### Part 1a - Initial Cleaning & DataType Conversion
+#### Part 1 - Initial Cleaning & DataType Conversion
      
 * After importing in pandas, numpy and reading in the csv, to see the full column values to better visualize the data I used ```pd.set_option('max_colwidth', 800)```
 * Checked datatypes ```df.dtypes``` and converted year int64 to datetime  ```df['Year'] = pd.to_datetime(df['Year'], format='%Y')```
@@ -24,7 +24,7 @@
   # Merge 
   full['Location'] = a.astype(str) + ', ' + b.astype(str) + ', ' + c.astype(str) + ', ' + d.astype(str)
 
-#### Part 1b - Transform - Geocode Latitude & Longitude 
+#### Part 2 - Transform - Geocode Latitude & Longitude 
 
 ```
   # Libraries used for API Call
