@@ -34,6 +34,7 @@
 
 #### Part 2 - Transform - Geocode Latitude & Longitude 
   
+* My ultimate goal is to play cartographer and visualize the Real Estate Transactions across geography. While the dataset provides a full address, I used an API call using the geopy library to request lat/long coordinate pairs for future map-making.
 * In order to geocode a pandas DataFrame with geopy you need to use RateLimiter. Geocode RateLimiter classes provides a convenient wrapper, which can be used to automatically add delays between geocoding calls to reduce the load. RateLimiter allows you perform bulk operations while handling error responses and adding delays to prevent time-outs.
 * For documentation and install see https://geopy.readthedocs.io/en/stable/
 
