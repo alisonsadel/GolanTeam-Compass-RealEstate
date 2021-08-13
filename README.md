@@ -72,7 +72,6 @@
   
   # Display results
   full.head()
-  ... 
   ```
 ![Image](geopy_dataframe.png)
 
