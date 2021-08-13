@@ -42,9 +42,7 @@
   from geopy.extra.rate_limiter import RateLimiter
   import webbrowser
   ```
-
-  ```
- 
+```
   # Apply Geocode to the location column
   
   geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
@@ -82,6 +80,7 @@
   # Display results
   
   full.head()
-  ```
+```
+
 ![Image](geopy_dataframe.png)
 
