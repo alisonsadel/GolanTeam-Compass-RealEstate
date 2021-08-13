@@ -1,4 +1,4 @@
-# Golan Team Real Estate Estate Transactions 2017-Present
+# Golan Team Real Estate Estate Transactions
 
 <img src="golan_team.gif" width="1000" height="400"/>
 
