@@ -1,4 +1,4 @@
-# Golan Team Compass Real Estate
+# Golan Team Real Estate Estate Transactions 2017-Present
 
 <img src="golan_team.gif" width="1000" height="500"/>
 
