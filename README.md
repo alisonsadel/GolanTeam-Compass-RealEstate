@@ -86,3 +86,6 @@ The clean dataframe looks like:
 
 ![Image](dataframe.png)
 
+Onto mapping!
+
+#### Part 3 - Visualizations - Folium Maps
