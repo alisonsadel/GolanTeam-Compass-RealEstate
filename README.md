@@ -41,7 +41,7 @@
   import webbrowser
   ```
 
-```
+  ```
   geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
  
   # Apply Geocode to the location column
@@ -69,10 +69,11 @@
   # Add missing values in Lat/Long columns
   full.loc[2,'Latitude'] = 40.692015
   full.loc[2,'Longitude'] = -73.934678
-  ...
-
+  ... 
+  ```
   
-* The above code produces the following dataFrame:
+* After leveraging geocode to extract coordinate pairs, the dataframe is ready for mapping:
+
 ```
 ![Image](geopy_dataframe.png)
 ```
