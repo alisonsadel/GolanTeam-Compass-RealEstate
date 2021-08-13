@@ -74,7 +74,7 @@
   
 * The above code produces the following dataFrame:
 
-<img align= "center" src="/Users/alison/Desktop/P/code/geopy_dataframe.png" width="400" height="300"/>
+<img align= "center" src="geopy_dataframe.png" width="400" height="300"/>
 
 
 
