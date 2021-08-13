@@ -73,6 +73,7 @@
 
   
 * The above code produces the following dataFrame:
+```
 ![Image](geopy_dataframe.png)
-
+```
 
