@@ -1,6 +1,6 @@
 # Golan Team Real Estate Estate Transactions 2017-Present
 
-<img src="golan_team.gif" width="1000" height="500"/>
+<img src="golan_team.gif" width="1000" height="400"/>
 
 
 #### Part 1 - Initial Cleaning & DataType Conversion
