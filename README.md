@@ -35,7 +35,7 @@
 #### Part 2 - Transform - Geocode Latitude & Longitude 
   
 * In order to geocode a pandas DataFrame with geopy you need to use RateLimiter. Geocode RateLimiter classes provides a convenient wrapper, which can be used to automatically add delays between geocoding calls to reduce the load. RateLimiter allows you perform bulk operations while handling error responses and adding delays to prevent time-outs.
-* For Documentation see https://geopy.readthedocs.io/en/stable/
+* For documentation and install see https://geopy.readthedocs.io/en/stable/
 
 ```
   # Libraries used for API Call
