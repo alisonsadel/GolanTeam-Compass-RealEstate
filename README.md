@@ -3,7 +3,10 @@
 #### Part 1 - Initial Cleaning & DataType Conversion
      
 * After importing in pandas, numpy and reading in the csv, to see the full column values to better visualize the data I used ```pd.set_option('max_colwidth', 800)```
-* Checked datatypes ```df.dtypes``` and converted year int64 to datetime  ```df['Year'] = pd.to_datetime(df['Year'], format='%Y')```
+
+* Checked datatypes ```df.dtypes``` and converted year int64 to datetime  
+```df['Year'] = pd.to_datetime(df['Year'], format='%Y')```
+
 * The dataset also contained sales outside of NYC in NJ, MD and CT but our focus is New York. 
   
   ```
@@ -25,6 +28,9 @@
   full['Location'] = a.astype(str) + ', ' + b.astype(str) + ', ' + c.astype(str) + ', ' + d.astype(str)
 
 #### Part 2 - Transform - Geocode Latitude & Longitude 
+  
+* In order to geocode a pandas DataFrame with geopy you need to use RateLimiter. Geocode RateLimiter classes provides a convenient wrapper, which can be used to automatically add delays between geocoding calls to reduce the load. RateLimiter allows you perform bulk operations while handling error responses and adding delays to prevent time-outs.
+* For Documentation see https://geopy.readthedocs.io/en/stable/
 
 ```
   # Libraries used for API Call
@@ -34,9 +40,6 @@
   from geopy.extra.rate_limiter import RateLimiter
   import webbrowser
   ```
-  
-* In order to geocode a pandas DataFrame with geopy you need to use RateLimiter. Geocode RateLimiter classes provides a convenient wrapper, which can be used to automatically add delays between geocoding calls to reduce the load. RateLimiter allows you perform bulk operations while handling error responses and adding delays to prevent time-outs.
-* For Documentation see https://geopy.readthedocs.io/en/stable/
 
 ```
   geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
@@ -70,7 +73,9 @@
 
   
 * The above code produces the following dataFrame:
-
+<p>
+    <img src="r/Users/alison/Desktop/P/code/geopy_dataframe.png" width="220" height="240" />
+</p>
 
 
 
