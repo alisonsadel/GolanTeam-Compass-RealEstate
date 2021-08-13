@@ -85,5 +85,5 @@
   full.head()
 ```
 
-![Image](geopy_dataframe.png)
+![Image](dataframe.png)
 
