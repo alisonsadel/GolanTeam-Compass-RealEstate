@@ -1,6 +1,8 @@
 # Golan Team Compass Real Estate
 
+```
 <img src="golan_team.gif" width="1000" height="500"/
+```
 
 #### Part 1 - Initial Cleaning & DataType Conversion
      
