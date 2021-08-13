@@ -74,6 +74,4 @@
   
 * The above code produces the following dataFrame:
 
-<img align= "center" src="geopy_dataframe.png" width="1000" height="500"/> 
-
-
+<img src=https://github.com/alisonsadel/GolanTeam-Compass-RealEstate/blob/main/geopy_dataframe.png>
