@@ -2,19 +2,20 @@
 
 #### Part 1 - Initial Cleaning & DataType Conversion
      
-* To see the full column values to better visualize the data I used ```pd.set_option('max_colwidth', 800)```
+* To see the full column values and better visualize the data before reading in the csv I used ```pd.set_option('max_colwidth', 800)```
 
-* Checked datatypes ```df.dtypes``` and converted year int64 to datetime  
-```df['Year'] = pd.to_datetime(df['Year'], format='%Y')```
+* Checked datatypes ```df.dtypes``` and converted year int64 to datetime using ```df['Year'] = pd.to_datetime(df['Year'], format='%Y')```
 
 * The dataset also contained sales outside of NYC in NJ, MD and CT but our focus is New York. 
   
   ```
   # Filter data to only include transactions in New York using a Boolean Mask
+  
   filtered = df['State'] == 'New York'
   full = df[filtered] 
   
   # Rename "Address" to "Street", reserving "Address" as the header in preparation to concat all the location values.
+  
   full = full.rename(columns= {"Address": "Street"})
   
   # Create individual arrays to extract and all location column values individually
@@ -25,6 +26,7 @@
   d = np.char.array(full['Postalcode'].values)
   
   # Merge 
+  
   full['Location'] = a.astype(str) + ', ' + b.astype(str) + ', ' + c.astype(str) + ', ' + d.astype(str)
 
 #### Part 2 - Transform - Geocode Latitude & Longitude 
@@ -42,35 +44,43 @@
   ```
 
   ```
-  geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
  
   # Apply Geocode to the location column
+  
+  geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
   full['Address'] = full['Location'].apply(geocode)
  
   # Take the data responses (latitude, longitude, alitude) from the API call and populate the data into the DataFrame Full column called "Address"
+  
   full['point'] = full['Address'].apply(lambda loc: tuple(loc.point) if loc else None)
   full.point
   
   # Convert Data from DataFrame "Full" to a Series
+  
   coordinates_series = full['point'].apply(pd.Series)
   coordinates_series
   
   # Add Latitude and Longitude as columns in dataframe
+  
   full['Latitude'] = coordinates_series[0]
   full['Longitude'] = coordinates_series[1]
   
   # Find Missing Values by Creating a bool series True for NaN values 
+  
   bool_series = pd.isnull(full["Latitude"]) 
   #bool_series = pd.isnull(full["Longitude"]) 
   
   # Displaying data only where columns = NaN 
+  
   full[bool_series]
   
   # Add missing values in Lat/Long columns
+  
   full.loc[2,'Latitude'] = 40.692015
   full.loc[2,'Longitude'] = -73.934678
   
   # Display results
+  
   full.head()
   ```
 ![Image](geopy_dataframe.png)
