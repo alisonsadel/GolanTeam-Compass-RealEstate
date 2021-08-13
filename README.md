@@ -69,11 +69,10 @@
   # Add missing values in Lat/Long columns
   full.loc[2,'Latitude'] = 40.692015
   full.loc[2,'Longitude'] = -73.934678
+  
+  # Display results
+  full.head()
   ... 
   ```
-  
-* After leveraging geocode to extract coordinate pairs, the dataframe is ready for mapping:
-
-```
 ![Image](geopy_dataframe.png)
-```
+
