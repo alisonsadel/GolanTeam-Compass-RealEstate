@@ -73,9 +73,8 @@
 
   
 * The above code produces the following dataFrame:
-<p>
-    <img src="r/Users/alison/Desktop/P/code/geopy_dataframe.png" width="220" height="240" />
-</p>
+
+<img align= "center" src="/Users/alison/Desktop/P/code/geopy_dataframe.png" width="400" height="300"/>
 
 
 
