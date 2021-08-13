@@ -73,6 +73,4 @@
 
   
 * The above code produces the following dataFrame:
-![Image](https://github.com/alisonsadel/GolanTeam-Compass-RealEstate/blob/main/geopy_dataframe.png?raw=true)
-
-<img src=https://github.com/alisonsadel/GolanTeam-Compass-RealEstate/blob/main/geopy_dataframe.png>
+![header image](https://github.com/alisonsadel/GolanTeam-Compass-RealEstate/blob/main/geopy_dataframe.png)
