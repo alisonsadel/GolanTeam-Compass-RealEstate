@@ -80,10 +80,8 @@
   full.loc[2,'Latitude'] = 40.692015
   full.loc[2,'Longitude'] = -73.934678
   
-  # Display results
-  
-  full.head()
 ```
+The clean dataframe looks like:
 
 ![Image](dataframe.png)
 
