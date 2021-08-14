@@ -42,14 +42,6 @@
 * For documentation and install see https://geopy.readthedocs.io/en/stable/
 
 ```
-  # Libraries used for API Call
-  
-  from geopy.geocoders import Nominatim
-  geolocator = Nominatim(user_agent= 'youremailhere@gmail.com'
-  from geopy.extra.rate_limiter import RateLimiter
-  import webbrowser
-  ```
-```
   # Apply Geocode to the location column
   
   geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
@@ -100,12 +92,6 @@ The clean dataframe looks like:
   * Step 4: Use ``.apply()`` with function to isolate only zipcode
 
 ```
-# Import Libaries
-from tqdm import tqdm
-tqdm.pandas()
-from geopy.geocoders import Nominatim
-geolocator = Nominatim(user_agent="emailhere@gmail.com")
-from geopy.extra.rate_limiter import RateLimiter
 
 # Use geolocator and append zipcode column to dataframe
 reverse = RateLimiter(geolocator.reverse, min_delay_seconds=.01)
@@ -123,7 +109,6 @@ df['zipcode'] = df['location'].apply(parse_zipcode)
 ### Part 4 - Transform - Determining Closest Subway Using sklearn
 #### Merging the Dataframes
 
-### Determining Walkability - Real Estate & Subway Station Datasets
 * The original subway dataset provided binary encoding for ada-accessibility from the original data. To create a more interesting feature, we added a walk-score for each housing record using ``sklearn.neighbors`` which implements the k-nearest neighbors vote and finds the shortest distance which required us to compare the latitude/longitude pairs for all 300+ housing records against 494 Subway stations to find the closest station and distance in miles.
 
  ```
