@@ -103,7 +103,10 @@ def parse_zipcode(location):
     else:
         return None
 df['zipcode'] = df['location'].apply(parse_zipcode)
- ```
+```
+ 
+The clean Subway Station dataframe looks like:
+![Image](subway_dataframe.png)
  
 ### Part 4 - Transform - Determining Closest Subway Using sklearn
 #### Merging the Dataframes
