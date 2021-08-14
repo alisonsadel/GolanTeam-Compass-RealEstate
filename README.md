@@ -9,17 +9,14 @@
 
 * Checked datatypes ```df.dtypes``` and converted year int64 to datetime using ```df['Year'] = pd.to_datetime(df['Year'], format='%Y')```
 
-* The dataset also contained sales outside of NYC in NJ, MD and CT but our focus is New York. 
+* The dataset also contained sales outside of NYC in NJ, MD and CT but the focus is New York City so I filtered using a Boolean Mask.
   
   ```
-  # Filter data to only include transactions in New York using a Boolean Mask
-  
   filtered = df['State'] == 'New York'
-  full = df[filtered] 
+  full = df[filtered]
   
-  # Rename "Address" to "Street", reserving "Address" as the header in preparation to concat all the location values.
-  
-  full = full.rename(columns= {"Address": "Street"})
+  ```
+* To prepare the data for the geocoding API, I concatanated each column value that held geographic features.
   
   # Create individual arrays to extract and all location column values individually
   
