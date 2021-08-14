@@ -176,11 +176,11 @@ housing['under_1_mile'] = np.where(housing['distance_miles'] <= 1, True, False)
 housing.head()
 
 ```
-The 4th iteration (final) of the clean dataframe looks like:
+The 4th iteration of the clean (final) dataframe looks like:
 
 ![Image](distance_dataframe.png)
 
-Onto mapping!
+Our dataset transformation is complete. Onto mapping!
 
 
 ### Part Five - Visualizations - Mapping with Folium
