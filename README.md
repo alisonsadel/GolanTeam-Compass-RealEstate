@@ -116,10 +116,10 @@ The clean Subway Station dataframe looks like:
 ### Part 4 - Transform - Determining Closest Subway Using sklearn
 #### Merging the Dataframes
 
-* The original subway dataset provided binary encoding for ada-accessibility from the original data. To create a more interesting feature, we added a walk-score for each housing record using ``sklearn.neighbors`` which implements the k-nearest neighbors vote and finds the shortest distance which required us to compare the latitude/longitude pairs for all 300+ housing records against 494 Subway stations to find the closest station and distance in miles.
+* The original subway dataset provided binary encoding for ada-accessibility from the original data. To create a more interesting feature, we added a walk-score for each housing record using ``sklearn.neighbors`` library which implements the k-nearest neighbors vote and finds the shortest distance which required us to compare the latitude/longitude pairs for all 300+ housing records against 494 Subway stations to find the closest station and distance in miles.
 
  ```
-# Challenge: Find the closest train station and approximate distance to each housing record using ```sklearn.neighbors``` library
+# Challenge: Find the closest train station and approximate distance to each housing record using sklearn.neighbors
 
 # Find the absolute value of each coordinate pair
 def dist(lat1, long1, lat2, long2):
