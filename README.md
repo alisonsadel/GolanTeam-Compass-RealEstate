@@ -12,21 +12,19 @@
 * The dataset also contained sales outside of NYC in NJ, MD and CT but the focus is New York City so I filtered using a Boolean Mask.
   
   ```
+  # Apply Filter
   filtered = df['State'] == 'New York'
   full = df[filtered]
-  
   ```
-* To prepare the data for the geocoding API, I concatanated each column value that held geographic features.
+* To prepare the data for the geocoding API, I concatanated each column value that held geographic features. I created individual arrays to extract location column values individually.
   
-  # Create individual arrays to extract and all location column values individually
-  
+   ```
   a = np.char.array(full['Street'].values)
   b = np.char.array(full['City'].values)
   c = np.char.array(full['State'].values)
   d = np.char.array(full['Postalcode'].values)
   
   # Merge 
-  
   full['Location'] = a.astype(str) + ', ' + b.astype(str) + ', ' + c.astype(str) + ', ' + d.astype(str)
 
 ### Part 2 - Transform - Geocode Latitude & Longitude 
