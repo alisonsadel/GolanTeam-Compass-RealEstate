@@ -33,6 +33,10 @@
   # Merge 
   full['Location'] = a.astype(str) + ', ' + b.astype(str) + ', ' + c.astype(str) + ', ' + d.astype(str)
 
+After initial cleaning, the dataframe looks like:
+
+![Image](dataframe1.png)
+
 ### Part 2 - Transform - Geocode Latitude & Longitude 
 ##### Real Estate Transactions Dataset
 
