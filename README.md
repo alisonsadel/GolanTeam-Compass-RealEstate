@@ -107,6 +107,7 @@ from geopy.geocoders import Nominatim
 geolocator = Nominatim(user_agent="emailhere@gmail.com")
 from geopy.extra.rate_limiter import RateLimiter
 
+# Use geolocator and append zipcode column to dataframe
 reverse = RateLimiter(geolocator.reverse, min_delay_seconds=.01)
 
 df['location'] = df.progress_apply(lambda row: reverse((row['lat_field'], row['lon_field'])),axis=1)
@@ -117,32 +118,28 @@ def parse_zipcode(location):
     else:
         return None
 df['zipcode'] = df['location'].apply(parse_zipcode)
-
+ ```
+ 
+### Part 4 - Transform - Determining Closest Subway Using sklearn
+#### Merging the Dataframes
 
 ### Determining Walkability - Real Estate & Subway Station Datasets
-* The original subway dataset provided binary encoding for ada-accessibility from the original data. To create a more interesting feature, we added a walk-score for each housing record using ``sklearn.neighbors`` which implements the k-nearest neighbors vote and finds the shortest distance which required us to compare the latitude/longitude pairs for all 30,000+ housing records against 494 Real Estate stations to find the closest station and distance in miles.
+* The original subway dataset provided binary encoding for ada-accessibility from the original data. To create a more interesting feature, we added a walk-score for each housing record using ``sklearn.neighbors`` which implements the k-nearest neighbors vote and finds the shortest distance which required us to compare the latitude/longitude pairs for all 300+ housing records against 494 Subway stations to find the closest station and distance in miles.
 
-* One data limitation that became apparent was that the Real Estate housing latitude/longitudes were rounded to the area's zipcode so the 'closest' train station and mileage associated was inacurrate. To keep the integrity of the data, rather than binning within 1/4 mile, 1/2 mile etc. ranges, we simply did an over 1 mile/under 1 mile and dropped any column referencing the 'closest' station.
-
-     ```
-# Challenge: Find the closest train station to each housing record
+ ```
+# Challenge: Find the closest train station and approximate distance to each housing record
 
 # Import dependencies
-import pandas as pd
-import numpy as np
 import sklearn.neighbors
 
 # Find the absolute value of each coordinate pair
 def dist(lat1, long1, lat2, long2):
     return np.abs((lat1-lat2)+(long1-long2))
 
-# Extract all lat values and save to variable
+# Extract all lat/long values and save to variable
 lat_column = housing.loc[:,'lat']
-lats = lat_column.values
-
-
-# Extract all long values and save to variable
 long_column = housing.loc[:,'long']
+lats = lat_column.values
 longs = long_column.values
 
 # Apply lambda function across each column and if 1 apply the function to the row
