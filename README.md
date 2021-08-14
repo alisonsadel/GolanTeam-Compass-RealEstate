@@ -152,7 +152,7 @@ closest_station = housing.apply(
     lambda row: find_station(row['lat'], row['long']), 
     axis=1)
 
-#### Find the distance between two lists of geographic coordinates - Use Haversine Distance
+#### Find the distance between two lists of geographic coordinates using Haversine Distance
 # Convert latitude and longitude to radians and add these columns to the dataframe using np.radians
 
 # Add columns with radians for latitude and longitude
