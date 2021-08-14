@@ -82,7 +82,7 @@ After initial cleaning, the dataframe looks like:
 ```
 The 2nd iteration of the dataframe after initial cleaning looks like:
 
-![Image](dataframe.png)
+![Image](dataframe2.png)
 
 ### Part 3 - Transform - Geocode zipcode
 #### NYC Subway Stations Dataset
