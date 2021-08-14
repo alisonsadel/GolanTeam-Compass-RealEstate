@@ -76,7 +76,7 @@
   full.loc[2,'Longitude'] = -73.934678
   
 ```
-The 2nd iteration of the dataframe looks like:
+The 2nd iteration of the dataframe after initial cleaning looks like:
 
 ![Image](dataframe.png)
 
@@ -168,8 +168,11 @@ housing['under_1_mile'] = np.where(housing['distance_miles'] <= 1, True, False)
 housing.head()
 
 ```
-The 4th iteration of the dataframe looks like:
+The 4th iteration (final) of the clean dataframe looks like:
 
 ![Image](distance_dataframe.png)
 
 Onto mapping!
+
+
+### Part Five - Visualizations - Mapping with Folium
