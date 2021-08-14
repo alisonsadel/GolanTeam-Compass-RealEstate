@@ -121,7 +121,7 @@ df['zipcode'] = df['location'].apply(parse_zipcode)
  ```
  
 ### Part 4 - Transform - Determining Closest Subway Using sklearn
-Merging the Dataframes
+#### Merging the Dataframes
 
 ### Determining Walkability - Real Estate & Subway Station Datasets
 * The original subway dataset provided binary encoding for ada-accessibility from the original data. To create a more interesting feature, we added a walk-score for each housing record using ``sklearn.neighbors`` which implements the k-nearest neighbors vote and finds the shortest distance which required us to compare the latitude/longitude pairs for all 300+ housing records against 494 Subway stations to find the closest station and distance in miles.
