@@ -2,6 +2,12 @@
 
 <img src="golan_team.gif" width="1000" height="400"/>
 
+# Overview
+* The datasets created and utilized for our analysis and visualizations took data on Real Estate Sales and MTA Subway Stations. The RE dataset was expanded upon using API calls to find the exact coordinates for each property. I made similar API calls for the Subway Data to create a zipcode column. After merging both datasets, I leveraged sklearn.neighbors the Haversine distance formula to find the subway station in closest proximity the property and the distance in miles from the station to display walkability to mass transit on future maps. After creating a unique dataset, I created visuals to display the Real Estate team's performance across time and geography.
+
+* Technologies Used: 
+  * Libraries Used: python, pandas, numpy, sklearn.preprocessing [oneHotEncoder], geopy[distance], geopy.geocoders[Nominatim], geopy.exc[GeoCoderTimedOut], geopy.extra.rate_limiter[RateLimiter], geopandas, plotly_express, tqdm, tqdm.pandas(), sklearn.neighbors, tqd, datetime, tqdm_notebook, webbrowser, sklearn.neighbors, folium .
+
 
 #### Part 1 - Initial Cleaning & DataType Conversion
      
@@ -19,6 +25,7 @@
 * To prepare the data for the geocoding API, I concatanated each column value that held geographic features. I created individual arrays to extract location column values individually.
   
    ```
+  # Array creation for each geographic feature
   a = np.char.array(full['Street'].values)
   b = np.char.array(full['City'].values)
   c = np.char.array(full['State'].values)
@@ -30,7 +37,7 @@
 ### Part 2 - Transform - Geocode Latitude & Longitude 
 ##### Real Estate Transactions Dataset
 
-* My ultimate goal is to play cartographer and visualize the Real Estate Transactions across geography. While the dataset provides a full address, I used an API call using the geopy library to request lat/long coordinate pairs for future map-making.
+* My ultimate goal is to play cartographer and visualize the Real Estate Transactions across geography. While the dataset provides a full address, I used an API call using the geopy to request lat/long coordinate pairs for future map-making.
 * In order to geocode a pandas DataFrame with geopy you need to use RateLimiter. Geocode RateLimiter classes provides a convenient wrapper, which can be used to automatically add delays between geocoding calls to reduce the load. RateLimiter allows you perform bulk operations while handling error responses and adding delays to prevent time-outs.
 * For documentation and install see https://geopy.readthedocs.io/en/stable/
 
