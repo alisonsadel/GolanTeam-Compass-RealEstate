@@ -192,7 +192,8 @@ Our dataset transformation is complete. Onto mapping!
 
 ## Section 5 Folium Circle Marker Map Visualization <a class="anchor" id="seventh-bullet"></a>
 
-* For Part Five, I made several Cluster Maps with increasing complexity.
+<img align= "center" src="3d.png" width="400" height="300"/> | <img align= "center" src="randomforestregression.png" width="400" height="300"/> 
+
 
 
 #### Future Considerations
