@@ -6,10 +6,11 @@
 * [Overview](#first-bullet)
 * [Tools](#second-bullet)
 * [Section 1 - Initial Cleaning](#third-bullet)
-* [Section 2 - Geocode Latitude & Longitude Using Geopy Nominatim] (#fourth-bullet)
-* [Section 3 - Geocode Zipcode Using Geopy Nominatim] (#fifth-bullet)
+* [Section 2 Geocode Latitude & Longitude Using Geopy Nominatim](#fourth-bullet)
+* [Section 3 - Geocode Zipcode Using Geopy Nominatim](#fifth-bullet)
 * [Section 4 - Determining Closest Subway Using Sklearn](#sixth-bullet)
-* [Section 5 - Visualizations - Folium Circle Marker Map] (#seventh-bullet)
+* [Section 5 Folium Circle Marker Map Visualization](#seventh-bullet)
+
 
 ## Overview <a class="anchor" id="first-bullet"></a>
 
@@ -189,7 +190,7 @@ The 4th iteration of the clean (final) dataframe looks like:
 
 Our dataset transformation is complete. Onto mapping!
 
-## Section 5 - Folium Circle Marker Map Visualization <a class="anchor" id="seventh-bullet"></a>
+## Section 5 Folium Circle Marker Map Visualization <a class="anchor" id="seventh-bullet"></a>
 
 * For Part Five, I made several Cluster Maps with increasing complexity.
 
