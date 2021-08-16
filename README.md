@@ -180,3 +180,15 @@ Our dataset transformation is complete. Onto mapping!
 
 
 ### Part Five - Visualizations - Mapping with Folium
+
+* For Part Five, I made several Cluster Maps with increasing complexity.
+
+* Future Considerations
+     *  I have not fully leveraged the tilelayer. The geojson file also has a Neighborhood feature that I would like to embed as a static label within the center of each polygon.
+     *  This is an incomplete dataset, only reflecting a sample of The Golan Team Sales. Once more comprehensive, I will:
+          * Add a link to the property url within the tooltip
+          * Use the distance to the nearest train station (see Part Four) to display within the tooltip transit info with subway icons.
+          * Visualize data over time
+ 
+ 
+ *** Additional Visualizations Coming Soon!
