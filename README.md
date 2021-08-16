@@ -52,7 +52,7 @@ After initial cleaning, the dataframe looks like:
 
 ![Image](dataframe1.png)
 
-### Part 2 - Transform - Geocode Latitude & Longitude 
+### Part 2 - Transform - Geocode Latitude & Longitude Using Geopy Nominatim - Real Estate Dataset 
 ##### Real Estate Transactions Dataset
 
 * My ultimate goal is to play cartographer and visualize the Real Estate Transactions across geography. While the dataset provides a full address, I used an API call using the geopy to request lat/long coordinate pairs for future map-making.
@@ -99,7 +99,7 @@ The 2nd iteration of the dataframe after initial cleaning looks like:
 
 ![Image](dataframe2.png)
 
-### Part 3 - Transform - Geocode zipcode
+### Part 3 - Geocode Zipcode Using Geopy Nominatim - MTA Subway Station Dataset
 #### NYC Subway Stations Dataset
 
 * Use``pd.get_dummies`` to generate binary values for whether the subway station is ADA-Accessiblle - Yes, No, Partially
@@ -128,7 +128,7 @@ The clean Subway Station dataframe looks like:
 
 ![Image](subway_dataframe.png)
  
-### Part 4 - Transform - Determining Closest Subway Using sklearn
+### Part 4 - Transform - Determining Closest Subway Using Sklearn & Dataframe Merge
 #### Merging the Dataframes
 
 * The original subway dataset provided binary encoding for ada-accessibility from the original data. To create a more interesting feature, we added a walk-score for each housing record using ``sklearn.neighbors`` library which implements the k-nearest neighbors vote and finds the shortest distance which required us to compare the latitude/longitude pairs for all 300+ housing records against 494 Subway stations to find the closest station and distance in miles.
@@ -195,7 +195,7 @@ The 4th iteration of the clean (final) dataframe looks like:
 Our dataset transformation is complete. Onto mapping!
 
 
-### Part Five - Visualizations - Mapping with Folium
+### Part Five - Visualizations - Folium Circle Marker Map
 
 * For Part Five, I made several Cluster Maps with increasing complexity.
 
