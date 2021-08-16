@@ -5,11 +5,11 @@
 ## TABLE OF CONTENTS
 * [Overview](#first-bullet)
 * [Tools](#second-bullet)
-* [Section 1 Initial Cleaning](#third-bullet)
-* [Section 2 Geocode Latitude & Longitude Using Geopy Nominatim](#fourth-bullet)
-* [Section 3 Geocode Zipcode Using Geopy Nominatim](#fifth-bullet)
-* [Section 4 Determining Closest Subway Using Sklearn](#sixth-bullet)
-* [Section 5 Folium Circle Marker Map Visualization](#seventh-bullet)
+* [1.0 Initial Cleaning](#third-bullet)
+* [2.0 Geocode Latitude & Longitude Using Geopy Nominatim](#fourth-bullet)
+* [3.0 Geocode Zipcode Using Geopy Nominatim](#fifth-bullet)
+* [4.0 Determining Closest Subway Using Sklearn](#sixth-bullet)
+* [5.0 Folium Circle Marker Map Visualization](#seventh-bullet)
 
 
 ## Overview <a class="anchor" id="first-bullet"></a>
