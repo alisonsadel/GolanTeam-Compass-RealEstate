@@ -2,6 +2,10 @@
 
 <img src="golan_team.gif" width="1000" height="400"/>
 
+## TOC:
+* [First Bullet Header](#first-bullet)
+* [Second Bullet Header](#second-bullet)
+
 # Overview
 * The datasets created and utilized for our analysis and visualizations took data on Real Estate Sales and MTA Subway Stations. The RE dataset was expanded upon using API calls to find the exact coordinates for each property. Similar API calls for the Subway Data were used to append a zipcode column. After merging both datasets, I leveraged sklearn.neighbors and calculated Haversine distance formula to find the subway station in closest proximity the property and the distance in miles from the station to display walkability to mass transit on future maps. After finalizing my unique dataset, maps were created using folium to display the Real Estate team's performance across time and geography.
 
@@ -183,7 +187,9 @@ Our dataset transformation is complete. Onto mapping!
 
 * For Part Five, I made several Cluster Maps with increasing complexity.
 
-* Future Considerations
+
+
+#### Future Considerations
      *  I have not fully leveraged the tilelayer. The geojson file also has a Neighborhood feature that I would like to embed as a static label within the center of each polygon.
      *  This is an incomplete dataset, only reflecting a sample of The Golan Team Sales. Once more comprehensive, I will:
           * Add a link to the property url within the tooltip
