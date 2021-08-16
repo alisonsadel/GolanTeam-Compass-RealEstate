@@ -13,11 +13,11 @@
 
 ## Overview <a class="anchor" id="first-bullet"></a>
 
-* The datasets created and utilized for our analysis and visualizations took data on Real Estate Sales and MTA Subway Stations. The RE dataset was expanded upon using API calls to find the exact coordinates for each property. Similar API calls for the Subway Data were used to append a zipcode column. After merging both datasets, I leveraged sklearn.neighbors and calculated Haversine distance formula to find the subway station in closest proximity the property and the distance in miles from the station to display walkability to mass transit on future maps. After finalizing my unique dataset, maps were created using folium to display the Real Estate team's performance across time and geography.
+The datasets created and utilized for our analysis and visualizations took data on Real Estate Sales and MTA Subway Stations. The RE dataset was expanded upon using API calls to find the exact coordinates for each property. Similar API calls for the Subway Data were used to append a zipcode column. After merging both datasets, I leveraged sklearn.neighbors and calculated Haversine distance formula to find the subway station in closest proximity the property and the distance in miles from the station to display walkability to mass transit on future maps. After finalizing my unique dataset, maps were created using folium to display the Real Estate team's performance across time and geography.
 
 ## Tools <a class="anchor" id="second-bullet"></a>
 
-* Tools Used: python, pandas, numpy, sklearn.preprocessing [oneHotEncoder], geopy[distance], geopy.geocoders[Nominatim], geopy.exc[GeoCoderTimedOut], geopy.extra.rate_limiter[RateLimiter], geopandas, plotly_express, tqdm, tqdm.pandas(), sklearn.neighbors, tqd, datetime, tqdm_notebook, webbrowser, sklearn.neighbors, folium, nbconvert.
+Tools Used: python, pandas, numpy, sklearn.preprocessing [oneHotEncoder], geopy[distance], geopy.geocoders[Nominatim], geopy.exc[GeoCoderTimedOut], geopy.extra.rate_limiter[RateLimiter], geopandas, plotly_express, tqdm, tqdm.pandas(), sklearn.neighbors, tqd, datetime, tqdm_notebook, webbrowser, sklearn.neighbors, folium, nbconvert.
 
 ## Part 1 Header <a class="anchor" id="third-bullet"></a>
 
@@ -49,17 +49,7 @@ After initial cleaning, the dataframe looks like:
 ![Image](dataframe1.png)
 
 ## Part 2 Header <a class="anchor" id="fourth-bullet"></a>
-
-## Part 3 Header <a class="anchor" id="fifth-bullet"></a>
-
-## Part 4 Header <a class="anchor" id="sixth-bullet"></a>
-
-## Part 5 Header <a class="anchor" id="seventh-bullet"></a>
-
-
-### Part 2 - Transform - Geocode Latitude & Longitude Using Geopy Nominatim - Real Estate Dataset 
-##### Real Estate Transactions Dataset
-
+#### Real Estate Dataset
 * My ultimate goal is to play cartographer and visualize the Real Estate Transactions across geography. While the dataset provides a full address, I used an API call using the geopy to request lat/long coordinate pairs for future map-making.
 * In order to geocode a pandas DataFrame with geopy you need to use RateLimiter. Geocode RateLimiter classes provides a convenient wrapper, which can be used to automatically add delays between geocoding calls to reduce the load. RateLimiter allows you perform bulk operations while handling error responses and adding delays to prevent time-outs.
 * For documentation and install see https://geopy.readthedocs.io/en/stable/
@@ -104,8 +94,8 @@ The 2nd iteration of the dataframe after initial cleaning looks like:
 
 ![Image](dataframe2.png)
 
-### Part 3 - Geocode Zipcode Using Geopy Nominatim - MTA Subway Station Dataset
-#### NYC Subway Stations Dataset
+## Part 3 Header <a class="anchor" id="fifth-bullet"></a>
+#### NYC MTA Subway Stations Dataset
 
 * Use``pd.get_dummies`` to generate binary values for whether the subway station is ADA-Accessiblle - Yes, No, Partially
 * Ultimately, both the RE and Subway datasets needed to share zipcode as a common column to later perform a groupby function and merge. The dataset provided latitude and longitude values  however there was no zipcode field. The Geopy library was used to create an API to find all location descriptors, using the latitude longitude pairs.
@@ -132,8 +122,8 @@ df['zipcode'] = df['location'].apply(parse_zipcode)
 The clean Subway Station dataframe looks like:
 
 ![Image](subway_dataframe.png)
- 
-### Part 4 - Transform - Determining Closest Subway Using Sklearn & Dataframe Merge
+
+## Part 4 Header <a class="anchor" id="sixth-bullet"></a>
 #### Merging the Dataframes
 
 * The original subway dataset provided binary encoding for ada-accessibility from the original data. To create a more interesting feature, we added a walk-score for each housing record using ``sklearn.neighbors`` library which implements the k-nearest neighbors vote and finds the shortest distance which required us to compare the latitude/longitude pairs for all 300+ housing records against 494 Subway stations to find the closest station and distance in miles.
@@ -199,8 +189,7 @@ The 4th iteration of the clean (final) dataframe looks like:
 
 Our dataset transformation is complete. Onto mapping!
 
-
-### Part Five - Visualizations - Folium Circle Marker Map
+## Part 5 Header <a class="anchor" id="seventh-bullet"></a>
 
 * For Part Five, I made several Cluster Maps with increasing complexity.
 
