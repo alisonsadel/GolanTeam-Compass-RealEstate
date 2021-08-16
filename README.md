@@ -3,28 +3,32 @@
 <img src="golan_team.gif" width="1000" height="400"/>
 
 ## TABLE OF CONTENTS
-* [Part 1 - Initial Cleaning & DataType Conversion](#first-bullet)
-* [Part 2 - Transform - Geocode Latitude & Longitude Using Geopy Nominatim - Re Estate Dataset ](#second-bullet)
-* [Part 3 - Transform - Geocode Zipcode Using Geopy Nominatim - MTA Subway Station Dataset (#third-bullet)
-* [Part 4 - Transform - Determining Closest Subway Using Sklearn & Dataframe Merge](#fourth-bullet)
-* [Part 5 - Visualizations - Folium Circle Marker Map] (#fifth-bullet)
+* [Overview](#first-bullet)
+* [Tools](#second-bullet)
+* [Part 1 - Initial Cleaning & DataType Conversion](#third-bullet)
+* [Part 2 - Transform - Geocode Latitude & Longitude Using Geopy Nominatim - Re Estate Dataset ](#fourth-bullet)
+* [Part 3 - Transform - Geocode Zipcode Using Geopy Nominatim - MTA Subway Station Dataset (#fifth-bullet)
+* [Part 4 - Transform - Determining Closest Subway Using Sklearn & Dataframe Merge](#sixth-bullet)
+* [Part 5 - Visualizations - Folium Circle Marker Map] (#seventh-bullet)
 
-## First Bullet Header <a class="anchor" id="first-bullet"></a>
+## Overview <a class="anchor" id="first-bullet"></a>
 
-## Second Bullet Header <a class="anchor" id="second-bullet"></a>
+## Tools <a class="anchor" id="second-bullet"></a>
 
-## Third Bullet Header <a class="anchor" id="third-bullet"></a>
+## Part 1 Header <a class="anchor" id="third-bullet"></a>
 
-## Fourth Bullet Header <a class="anchor" id="fourth-bullet"></a>
+## Part 2 Header <a class="anchor" id="fourth-bullet"></a>
 
-## Fifth Bullet Header <a class="anchor" id="fifth-bullet"></a>
+## Part 3 Header <a class="anchor" id="fifth-bullet"></a>
 
+## Part 4 Header <a class="anchor" id="sixth-bullet"></a>
 
+## Part 5 Header <a class="anchor" id="seventh-bullet"></a>
 
 # Overview
 * The datasets created and utilized for our analysis and visualizations took data on Real Estate Sales and MTA Subway Stations. The RE dataset was expanded upon using API calls to find the exact coordinates for each property. Similar API calls for the Subway Data were used to append a zipcode column. After merging both datasets, I leveraged sklearn.neighbors and calculated Haversine distance formula to find the subway station in closest proximity the property and the distance in miles from the station to display walkability to mass transit on future maps. After finalizing my unique dataset, maps were created using folium to display the Real Estate team's performance across time and geography.
 
-* Libraries Used: python, pandas, numpy, sklearn.preprocessing [oneHotEncoder], geopy[distance], geopy.geocoders[Nominatim], geopy.exc[GeoCoderTimedOut], geopy.extra.rate_limiter[RateLimiter], geopandas, plotly_express, tqdm, tqdm.pandas(), sklearn.neighbors, tqd, datetime, tqdm_notebook, webbrowser, sklearn.neighbors, folium, nbconvert.
+* Tools Used: python, pandas, numpy, sklearn.preprocessing [oneHotEncoder], geopy[distance], geopy.geocoders[Nominatim], geopy.exc[GeoCoderTimedOut], geopy.extra.rate_limiter[RateLimiter], geopandas, plotly_express, tqdm, tqdm.pandas(), sklearn.neighbors, tqd, datetime, tqdm_notebook, webbrowser, sklearn.neighbors, folium, nbconvert.
 
 #### Part 1 - Initial Cleaning & DataType Conversion
      
