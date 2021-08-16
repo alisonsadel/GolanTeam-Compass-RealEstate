@@ -7,12 +7,14 @@
 
 * Libraries Used: python, pandas, numpy, sklearn.preprocessing [oneHotEncoder], geopy[distance], geopy.geocoders[Nominatim], geopy.exc[GeoCoderTimedOut], geopy.extra.rate_limiter[RateLimiter], geopandas, plotly_express, tqdm, tqdm.pandas(), sklearn.neighbors, tqd, datetime, tqdm_notebook, webbrowser, sklearn.neighbors, folium. nbconvert.
 
+```
 <details>
   <summary>The title of the image group</summary><details>
-  <img src="http://127.0.0.1:8000/slides.slides.html#/" name="image-name">
+  <img src="/Users/alison/Desktop/P/code/slides.slides.html" name="image-name">
   <img src="image-url" name="image-name">
   <img src="image-url" name="image-name">
 </details>
+````
 
 #### Part 1 - Initial Cleaning & DataType Conversion
      
