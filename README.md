@@ -3,11 +3,20 @@
 <img src="golan_team.gif" width="1000" height="400"/>
 
 ## TABLE OF CONTENTS
-* [First Bullet Header](#first-bullet)
-* [Second Bullet Header](#second-bullet)
-* [Third Bullet Header](#first-bullet)
-* [Fourth Bullet Header](#second-bullet)
-* [Fifth Bullet Header]
+* [Part 1 - Initial Cleaning & DataType Conversion](#first-bullet)
+* [Part 2 - Transform - Geocode Latitude & Longitude Using Geopy Nominatim - Re Estate Dataset ](#second-bullet)
+* [Part 3 - Transform - Geocode Zipcode Using Geopy Nominatim - MTA Subway Station Dataset (#third-bullet)
+* [Part 4 - Transform - Determining Closest Subway Using Sklearn & Dataframe Merge](#fourth-bullet)
+* [Part 5 - Visualizations - Folium Circle Marker Map] (#fifth-bullet)
+
+## First Bullet Header <a class="anchor" id="first-bullet"></a>
+
+code blocks...
+
+## Second Bullet Header <a class="anchor" id="second-bullet"></a>
+
+code blocks...
+
 
 # Overview
 * The datasets created and utilized for our analysis and visualizations took data on Real Estate Sales and MTA Subway Stations. The RE dataset was expanded upon using API calls to find the exact coordinates for each property. Similar API calls for the Subway Data were used to append a zipcode column. After merging both datasets, I leveraged sklearn.neighbors and calculated Haversine distance formula to find the subway station in closest proximity the property and the distance in miles from the station to display walkability to mass transit on future maps. After finalizing my unique dataset, maps were created using folium to display the Real Estate team's performance across time and geography.
