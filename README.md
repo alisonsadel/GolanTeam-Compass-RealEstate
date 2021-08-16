@@ -5,11 +5,11 @@
 ## TABLE OF CONTENTS
 * [Overview](#first-bullet)
 * [Tools](#second-bullet)
-* [Part 1 - Initial Cleaning](#third-bullet)
-* [Part 2 - Transform - Geocode Latitude & Longitude Using Geopy Nominatim - Re Estate Dataset] (#fourth-bullet)
-* [Part 3 - Transform - Geocode Zipcode Using Geopy Nominatim - MTA Subway Station Dataset] (#fifth-bullet)
-* [Part 4 - Transform - Determining Closest Subway Using Sklearn & Dataframe Merge](#sixth-bullet)
-* [Part 5 - Visualizations - Folium Circle Marker Map] (#seventh-bullet)
+* [Section 1 - Initial Cleaning](#third-bullet)
+* [Section 2 - Geocode Latitude & Longitude Using Geopy Nominatim] (#fourth-bullet)
+* [Section 3 - Geocode Zipcode Using Geopy Nominatim] (#fifth-bullet)
+* [Section 4 - Determining Closest Subway Using Sklearn](#sixth-bullet)
+* [Section 5 - Visualizations - Folium Circle Marker Map] (#seventh-bullet)
 
 ## Overview <a class="anchor" id="first-bullet"></a>
 
@@ -19,7 +19,7 @@ The datasets created and utilized for our analysis and visualizations took data 
 
 Tools Used: python, pandas, numpy, sklearn.preprocessing [oneHotEncoder], geopy[distance], geopy.geocoders[Nominatim], geopy.exc[GeoCoderTimedOut], geopy.extra.rate_limiter[RateLimiter], geopandas, plotly_express, tqdm, tqdm.pandas(), sklearn.neighbors, tqd, datetime, tqdm_notebook, webbrowser, sklearn.neighbors, folium, nbconvert.
 
-## Part 1 Initial Cleaning <a class="anchor" id="third-bullet"></a>
+## Section 1 Initial Cleaning <a class="anchor" id="third-bullet"></a>
 
 * To see the full column values and better visualize the data before reading in the csv I used ```pd.set_option('max_colwidth', 800)```
 
@@ -48,7 +48,7 @@ After initial cleaning, the dataframe looks like:
 
 ![Image](dataframe1.png)
 
-## Part 2 Header <a class="anchor" id="fourth-bullet"></a>
+## Section 2 Geocode Latitude & Longitude Using Geopy Nominatim <a class="anchor" id="fourth-bullet"></a>
 #### Real Estate Dataset
 * My ultimate goal is to play cartographer and visualize the Real Estate Transactions across geography. While the dataset provides a full address, I used an API call using the geopy to request lat/long coordinate pairs for future map-making.
 * In order to geocode a pandas DataFrame with geopy you need to use RateLimiter. Geocode RateLimiter classes provides a convenient wrapper, which can be used to automatically add delays between geocoding calls to reduce the load. RateLimiter allows you perform bulk operations while handling error responses and adding delays to prevent time-outs.
@@ -94,7 +94,7 @@ The 2nd iteration of the dataframe after initial cleaning looks like:
 
 ![Image](dataframe2.png)
 
-## Part 3 Header <a class="anchor" id="fifth-bullet"></a>
+## Section 3 Geocode Zipcode Using Geopy Nominatim <a class="anchor" id="fifth-bullet"></a>
 #### NYC MTA Subway Stations Dataset
 
 * Use``pd.get_dummies`` to generate binary values for whether the subway station is ADA-Accessiblle - Yes, No, Partially
@@ -123,8 +123,8 @@ The clean Subway Station dataframe looks like:
 
 ![Image](subway_dataframe.png)
 
-## Part 4 Header <a class="anchor" id="sixth-bullet"></a>
-#### Merging the Dataframes
+## Part 4 Determining Closest Subway Using Sklearn <a class="anchor" id="sixth-bullet"></a>
+#### Find the closest subway station, its difference and merging the Subway and Real Eatate Dataframes
 
 * The original subway dataset provided binary encoding for ada-accessibility from the original data. To create a more interesting feature, we added a walk-score for each housing record using ``sklearn.neighbors`` library which implements the k-nearest neighbors vote and finds the shortest distance which required us to compare the latitude/longitude pairs for all 300+ housing records against 494 Subway stations to find the closest station and distance in miles.
 
@@ -189,7 +189,7 @@ The 4th iteration of the clean (final) dataframe looks like:
 
 Our dataset transformation is complete. Onto mapping!
 
-## Part 5 Header <a class="anchor" id="seventh-bullet"></a>
+## Section 5 - Folium Circle Marker Map Visualization <a class="anchor" id="seventh-bullet"></a>
 
 * For Part Five, I made several Cluster Maps with increasing complexity.
 
