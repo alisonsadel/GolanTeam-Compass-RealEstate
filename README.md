@@ -195,13 +195,15 @@ Our dataset transformation is complete. Onto mapping!
 * For Part Five, I made several Cluster Maps with increasing complexity.
 
 
-
 #### Future Considerations
-     *  I have not fully leveraged the tilelayer. The geojson file also has a Neighborhood feature that I would like to embed as a static label within the center of each polygon.
-     *  This is an incomplete dataset, only reflecting a sample of The Golan Team Sales. Once more comprehensive, I will:
-          * Add a link to the property url within the tooltip
-          * Use the distance to the nearest train station (see Part Four) to display within the tooltip transit info with subway icons.
-          * Visualize data over time
+
+I have not fully leveraged the tilelayer. The geojson file also has a Neighborhood feature that I would like to embed as a static label within the center of each polygon.
+
+This is an incomplete dataset, only reflecting a sample of The Golan Team transactions from 2017-2021. Once more comprehensive, I will:
+  Add a link to the property url within the tooltip
+  Use the distance to the nearest train station (see Part Four) to display within the tooltip transit info with subway icons.
+  Visualize data over time
+  Create a world cloud showing frequency of transaction by neighborhood 
  
  
 #### Additional Visualizations Coming Soon!
