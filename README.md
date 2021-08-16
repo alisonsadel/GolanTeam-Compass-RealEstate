@@ -13,6 +13,8 @@
 
 ## Overview <a class="anchor" id="first-bullet"></a>
 
+* The datasets created and utilized for our analysis and visualizations took data on Real Estate Sales and MTA Subway Stations. The RE dataset was expanded upon using API calls to find the exact coordinates for each property. Similar API calls for the Subway Data were used to append a zipcode column. After merging both datasets, I leveraged sklearn.neighbors and calculated Haversine distance formula to find the subway station in closest proximity the property and the distance in miles from the station to display walkability to mass transit on future maps. After finalizing my unique dataset, maps were created using folium to display the Real Estate team's performance across time and geography.
+
 ## Tools <a class="anchor" id="second-bullet"></a>
 
 ## Part 1 Header <a class="anchor" id="third-bullet"></a>
