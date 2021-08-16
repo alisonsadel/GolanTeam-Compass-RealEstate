@@ -5,8 +5,14 @@
 # Overview
 * The datasets created and utilized for our analysis and visualizations took data on Real Estate Sales and MTA Subway Stations. The RE dataset was expanded upon using API calls to find the exact coordinates for each property. Similar API calls for the Subway Data were used to append a zipcode column. After merging both datasets, I leveraged sklearn.neighbors and calculated Haversine distance formula to find the subway station in closest proximity the property and the distance in miles from the station to display walkability to mass transit on future maps. After finalizing my unique dataset, maps were created using folium to display the Real Estate team's performance across time and geography.
 
-* Libraries Used: python, pandas, numpy, sklearn.preprocessing [oneHotEncoder], geopy[distance], geopy.geocoders[Nominatim], geopy.exc[GeoCoderTimedOut], geopy.extra.rate_limiter[RateLimiter], geopandas, plotly_express, tqdm, tqdm.pandas(), sklearn.neighbors, tqd, datetime, tqdm_notebook, webbrowser, sklearn.neighbors, folium .
+* Libraries Used: python, pandas, numpy, sklearn.preprocessing [oneHotEncoder], geopy[distance], geopy.geocoders[Nominatim], geopy.exc[GeoCoderTimedOut], geopy.extra.rate_limiter[RateLimiter], geopandas, plotly_express, tqdm, tqdm.pandas(), sklearn.neighbors, tqd, datetime, tqdm_notebook, webbrowser, sklearn.neighbors, folium. nbconvert.
 
+<details>
+  <summary>The title of the image group</summary><details>
+  <img src="http://127.0.0.1:8000/slides.slides.html#/" name="image-name">
+  <img src="image-url" name="image-name">
+  <img src="image-url" name="image-name">
+</details>
 
 #### Part 1 - Initial Cleaning & DataType Conversion
      
