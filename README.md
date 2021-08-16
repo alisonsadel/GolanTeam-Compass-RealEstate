@@ -5,9 +5,9 @@
 ## TABLE OF CONTENTS
 * [Overview](#first-bullet)
 * [Tools](#second-bullet)
-* [Part 1 - Initial Cleaning & DataType Conversion](#third-bullet)
-* [Part 2 - Transform - Geocode Latitude & Longitude Using Geopy Nominatim - Re Estate Dataset ](#fourth-bullet)
-* [Part 3 - Transform - Geocode Zipcode Using Geopy Nominatim - MTA Subway Station Dataset (#fifth-bullet)
+* [Part 1 - Initial Cleaning](#third-bullet)
+* [Part 2 - Transform - Geocode Latitude & Longitude Using Geopy Nominatim - Re Estate Dataset] (#fourth-bullet)
+* [Part 3 - Transform - Geocode Zipcode Using Geopy Nominatim - MTA Subway Station Dataset] (#fifth-bullet)
 * [Part 4 - Transform - Determining Closest Subway Using Sklearn & Dataframe Merge](#sixth-bullet)
 * [Part 5 - Visualizations - Folium Circle Marker Map] (#seventh-bullet)
 
@@ -19,7 +19,7 @@ The datasets created and utilized for our analysis and visualizations took data 
 
 Tools Used: python, pandas, numpy, sklearn.preprocessing [oneHotEncoder], geopy[distance], geopy.geocoders[Nominatim], geopy.exc[GeoCoderTimedOut], geopy.extra.rate_limiter[RateLimiter], geopandas, plotly_express, tqdm, tqdm.pandas(), sklearn.neighbors, tqd, datetime, tqdm_notebook, webbrowser, sklearn.neighbors, folium, nbconvert.
 
-## Part 1 Header <a class="anchor" id="third-bullet"></a>
+## Part 1 Initial Cleaning <a class="anchor" id="third-bullet"></a>
 
 * To see the full column values and better visualize the data before reading in the csv I used ```pd.set_option('max_colwidth', 800)```
 
