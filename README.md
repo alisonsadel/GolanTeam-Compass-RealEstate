@@ -196,6 +196,8 @@ Our dataset transformation is complete. Onto mapping!
 
 <iframe src="my_map3.html" height="200" width="300" title="Iframe Example"></iframe>
 
+display(HTML("<a href='{my_map3}.html' target='_blank'> {my_map3}.html </a>".format(name=name)))
+
 #### Future Considerations
 
 I have not fully leveraged the tilelayer. The geojson file also has a Neighborhood feature that I would like to embed as a static label within the center of each polygon.
