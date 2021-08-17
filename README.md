@@ -192,11 +192,9 @@ Our dataset transformation is complete. Onto mapping!
 
 ## 5.0 Folium Circle Marker Map Visualization <a class="anchor" id="seventh-bullet"></a>
 
-HTML('<iframe src=my_map3.html width=900 height=350></iframe>')
-
 <img align= "center" src="3d.png" width="400" height="300"/> | <img align= "center" src="randomforestregression.png" width="400" height="300"/> 
 
-
+<iframe src="my_map3.html" height="200" width="300" title="Iframe Example"></iframe>
 
 #### Future Considerations
 
