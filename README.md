@@ -192,7 +192,7 @@ Our dataset transformation is complete. Onto mapping!
 
 ## 5.0 Folium Circle Marker Map Visualization <a class="anchor" id="seventh-bullet"></a>
 
-<img align= "right" src="3d.png" width="440" height="300"/> | <img align= "center" src="heatmap.png" width="440" height="300"/> 
+<img align= "left" src="3d.png" width="440" height="300"/> | <img align= "left" src="heatmap.png" width="440" height="300"/> 
 
 
 #### Future Considerations
